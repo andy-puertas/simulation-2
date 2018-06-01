@@ -11,8 +11,9 @@ export default function House(props){
             <p>City: {city}</p>
             <p>State: {state}</p>
             <p>Zipcode: {zip}</p>
-            <br />
             <button onClick={() => props.delete(id)}>X</button>
+            <br />
+            <br />
             {/* <button onClick={(e) => this.props.deleteHouse(id)}>X</button> */}
         </div>
     )
