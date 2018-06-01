@@ -10,6 +10,9 @@ const app = express();
 
 app.use( bodyParser.json() );
 
+app.get('/api/list', ctrl.read)
+app.post('/api/house', ctrl.create)
+
 massive(process.env.CONNECTION_STRING)
   .then(dbInstance => {
     console.log("database is connected");

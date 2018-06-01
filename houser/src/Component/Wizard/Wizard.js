@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import {Link} from 'react-router-dom'
+import {Link} from 'react-router-dom';
+import axios from 'axios';
 
 export default class Wizard extends Component {
     constructor(){
@@ -16,9 +17,10 @@ export default class Wizard extends Component {
         this.handleCity = this.handleCity.bind( this )
         this.handleState = this.handleState.bind( this )
         this.handleZip = this.handleZip.bind( this )
+        this.addListing = this.addListing.bind( this )
     }
 
-  
+    
 
     handleName(input){
          this.setState({
@@ -53,8 +55,15 @@ export default class Wizard extends Component {
             zip: input
         })
     }
-    
-    
+
+    addListing() {
+        let {name, address, city, state, zip} = this.state
+        axios.post('/api/house', {name, address, city, state, zip})
+        .then( res => {this.setState(
+            res.data
+        )})
+    }
+   
     
     render() {
         console.log(this.state)
@@ -69,31 +78,40 @@ export default class Wizard extends Component {
                 <br />
                 <br />
 
-                Property Name
+                <p>Property Name</p>
                 <input onChange={(e) => {this.handleName(e.target.value)}} type='text'/>
                 <br />
                 <br />
 
-                Address
+                <p>Address</p>
                 <input onChange={(e) => {this.handleAddress(e.target.value)}} type='text'/>
                 <br />
                 <br />
 
-                City
+                <p>City</p>
                 <input onChange={(e) => {this.handleCity(e.target.value)}} type='text' />
                 <br />
                 <br />
 
-                State
+                <p>State</p>
                 <input onChange={(e) => {this.handleState(e.target.value)}} type='text' />
                 <br />
                 <br />
 
-                Zip
+                <p>Zip</p>
                 <input onChange={(e) => {this.handleZip(e.target.value)}} type='text' />
                 <br />
+                <br />
+
+                <Link to='/'>
+                    <button onClick={this.addListing}>
+                        Complete
+                    </button>
+                </Link>
             </div>
             
         )
     }
 }
+    
+    
