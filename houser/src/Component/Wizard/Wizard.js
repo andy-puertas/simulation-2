@@ -57,13 +57,14 @@ export default class Wizard extends Component {
     }
 
     addListing() {
-        let {name, address, city, state, zip} = this.state
+        let {name, address, city, state, zip} = this.state;
+
         axios.post('/api/house', {name, address, city, state, zip})
-        .then( res => {this.setState(
-            res.data
-        )})
-    }
+        .then( res => {
+            console.log(res.data)
+        })
    
+    }
     
     render() {
         console.log(this.state)
@@ -104,7 +105,7 @@ export default class Wizard extends Component {
                 <br />
 
                 <Link to='/'>
-                    <button onClick={this.addListing}>
+                    <button onClick={(e) => this.addListing(e)}>
                         Complete
                     </button>
                 </Link>

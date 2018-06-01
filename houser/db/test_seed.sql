@@ -1,3 +1,5 @@
+-- Creating data for the site
+
 -- CREATE TABLE houser (
 --     id SERIAL PRIMARY KEY,
 --     name VARCHAR(30),
@@ -8,6 +10,13 @@
 -- )
 
 
+-- Adding a house listing
+
 -- INSERT INTO houser (name, address, city, state, zip)
 -- VALUES ('', '', '', '', 0)
 
+
+-- Deleting a house listing
+
+-- DELETE FROM houser
+-- WHERE id=$1;

@@ -12,6 +12,7 @@ app.use( bodyParser.json() );
 
 app.get('/api/list', ctrl.read)
 app.post('/api/house', ctrl.create)
+app.delete('/api/house/:id', ctrl.delete)
 
 massive(process.env.CONNECTION_STRING)
   .then(dbInstance => {
