@@ -45,12 +45,13 @@ export default class Dashboard extends Component {
             )
         }
     )  
-                   
+    
+    
    
     return (
         <div>
             <h2>Dashboard</h2>
-            <Link to='/wizard'>
+            <Link to='/wizard/stepone'>
                 <button type='button'>
                     Add New Property
                 </button>

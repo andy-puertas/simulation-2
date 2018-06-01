@@ -20,3 +20,13 @@
 
 -- DELETE FROM houser
 -- WHERE id=$1;
+
+
+-- Altering the houser table
+
+-- ALTER TABLE houser
+-- ADD img VARCHAR(200),
+--     mortg INTEGER,
+--     rent INTEGER         
+
+
