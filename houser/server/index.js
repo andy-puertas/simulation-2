@@ -1,7 +1,7 @@
 require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-Parser');
-const hc = require('./controller.js');
+//const hc = require('./controller.js');
 const massive = require('massive');
 const ctrl = require('../server/controller')
 const port = 3030;

@@ -15,7 +15,7 @@ export default class StepThree extends Component {
     }
 
     addListing() {
-        let {name, address, city, state, zip} = this.state;
+        let {name, address, city, state, zip} = this.props;
 
         axios.post('/api/house', {name, address, city, state, zip})
         .then( res => {
